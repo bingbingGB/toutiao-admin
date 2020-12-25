@@ -1,9 +1,17 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+// import router from './router'
+// import store from './store'
 
 // 全局样式
 import './styles/index.less'
+// 加载element 样式
+import ElementUI from 'element-ui'
 
-createApp(App).use(store).use(router).mount('#app')
+// 注册全局element样式
+Vue.use(ElementUI)
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+}).$mount('#app')
